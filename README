@@ -1,0 +1,77 @@
+## Delite Blockchain
+
+** chain-id: delite_22-1 **
+
+Delite Blockchain 2022 testnet #1
+
+**4 validator nodes:**
+
+delite1 10.10.0.61
+
+delite2 10.10.0.249
+
+delite3 10.10.0.151
+
+delite4 10.10.0.34
+
+### Compile Delite Blockchain node and join the network: 
+
+1) Install gcc, make, go v1.7
+
+2) Clone repo
+
+3) cd into repo directory and
+   
+   $ make install
+
+4) add to ~/.profile: 
+```   
+   /home/<username>/go/bin/delited
+```   
+   $ source ~/.profile
+
+5) $ delited 
+   
+   shows delited help info
+
+6) $ delited init <choose a node name> --chain-id delite_22-1
+
+7) change directory to:  ~/.delited/config
+
+8) $ rm genesis.json
+
+9) create a new file: genesis.json
+   
+   copy GENESIS_APR1.JSON content to new genesis.json and save
+
+10) Edit ~/.delited/config/config.toml file:
+    
+    a) set persistent_peers to "afcbea1fa28457ec8c13128eb9a18066ff514216@10.10.0.61:26656,f20ae472745cee72d7125fe9bf68f26ccce1388d@10.10.0.249:26656,368b6d6ee4164311d1c6096be46b93175af4c380@10.10.0.151:26656,1cf0c06b00d9ce3dddee4db2bd074922fce4b05f@10.10.0.34:26656"
+    
+    b) RPC Server Configuration Options: change laddr="tcp://127.0.0.1:26657" to laddr="tcp://0.0.0.0:26657"
+
+11) $ delited start
+
+12) Delite Blockchain node starts joining the blockchain network and syncing to the latest block
+
+** Create account and get test tokens: **
+
+$ delited keys add <choose an account name>
+
+Set account password - enter twice 
+
+Record new account information print-out for future reference
+
+
+
+
+### Delite Blockchain Network List 
+
+1: Four node TestNet: delite_22-1 for long term operational uptime test - master 5fe3062
+
+2: Four node DevNet: ....
+
+
+
+
+
